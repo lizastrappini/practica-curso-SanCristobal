@@ -1,0 +1,23 @@
+form {
+    width: 40%;
+    display: grid;
+    grid-template-columns: 2;
+
+}
+
+.check{
+    margin-left: 160px;
+    margin-top: -15px;
+}
+
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+span{
+    color:red;
+}
+div{
+    display: grid;
+    grid-template-columns: 2;
+}

@@ -1,0 +1,36 @@
+<h1>Formulario reactivo</h1>
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre">
+    <span *ngIf="this.formulario.get('nombre')?.errors?.['pattern']">deben ser solo letras</span>
+    
+    <label for="apelido">Apellido:</label>
+    <input type="text" id="apellido" formControlName="apellido">
+    <span *ngIf="this.formulario.get('apellido')?.errors?.['pattern']">deben ser solo letras</span>
+
+    <div formGroupName="emails">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+      
+      <label for="confirmacionEmail">Confirmacion de email:</label>
+      <input type="email" id="confirmacionEmail" formControlName="confirmacionEmail">
+    </div>
+    
+    <label for="telefono">Telefono:</label>
+    <input type="text" id="telefono" formControlName="telefono">
+    <span *ngIf="this.formulario.get('telefono')?.errors?.['pattern']">deben ser solo numeros</span>
+    
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="password" formControlName="password">
+    
+    <label for="notificaciones">Quiero recibir notificaciones de la pagina:</label>
+    <input class="check" type="checkbox" id="notificaciones" formControlName="notificaciones">
+    
+    <label for="terminos">Acepto los terminos y condiciones:</label>
+    <input class="check" type="checkbox" id="terminos" formControlName="terminos">
+
+    <button type="submit" [disabled]="!formulario.valid">Enviar</button>
+  </form>
+  <p>Estado: {{ formulario.status }}</p>
