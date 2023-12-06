@@ -1,0 +1,12 @@
+<h1> Empiezan las X </h1>
+
+<div>
+    <app-celda 
+        *ngFor="let valor of celdas; let i = index" 
+        [valor]="valor"
+        (click)="mover(i)"> 
+    </app-celda>
+</div>
+
+<button (click)="nuevoJuego()">Volver a empezar</button>
+<h2 *ngIf="ganador"> El jugador {{ ganador }} gano! </h2>
